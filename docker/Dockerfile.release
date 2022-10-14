@@ -1,0 +1,6 @@
+FROM osscar_jupyter_docker-image-base
+
+COPY . /work
+WORKDIR /work
+
+ENTRYPOINT ["/bin/bash"]
