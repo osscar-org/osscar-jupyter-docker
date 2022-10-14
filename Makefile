@@ -101,6 +101,9 @@ start-container: ## start docker container
 jupyter: ## start Jupyter Notebook server
 	jupyter-notebook --ip=0.0.0.0 --port=${JUPYTER_CONTAINER_PORT}
 
+voila:
+	voila --Voila.ip=0.0.0.0 --template=osscar --VoilaConfiguration.enable_nbextensions=True notebook/ --port=$PORT --no-browser --MappingKernelManager.cull_interval=60 --MappingKernelManager.cull_idle_timeout=120 --MappingKernelManager.cull_busy=True
+
 test: ## run test cases in tests directory
 	$(PYTHON) -m unittest discover
 
